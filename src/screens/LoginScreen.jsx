@@ -69,7 +69,7 @@ export default function Login() {
         const user = userCredential.user;
         setEmail("");
         setPassword("");
-        navigation.push("TodoList");
+        navigation.push("Todo");
       })
       .catch((error) => {
         const statusCode = error.code;
@@ -95,11 +95,11 @@ return (
       <TextInput
         style={styles.textInput}
         onChangeText={(text) => setEmail(text)}
-        placeholder="Email"
+        placeholder="Enter Your Email"
       />
       <TextInput
         style={styles.textInput}
-        placeholder="Password"
+        placeholder="Enter Your Password"
         onChangeText={(text) => setPassword(text)}
         secureTextEntry={true}
       />
@@ -112,13 +112,13 @@ return (
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-          <Text style={styles.loginButtonText}>Login</Text>
+          <Text style={styles.loginButtonText}>LOGIN</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={handleSignUp}
           style={styles.registerButton}
         >
-          <Text style={styles.registerButtonText}>Register</Text>
+          <Text style={styles.registerButtonText}>REGISTER</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -131,9 +131,9 @@ return (
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "lightblue",
       width: "100%",
       height: "100%",
+      backgroundColor:"#F0FFFF",
       alignItems: "center",
       justifyContent: "center",
       padding: "4%",
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     textInput: {
       width: "80%",
       height: 50,
-      backgroundColor: "white",
+      borderWidth:1,
       borderRadius: 10,
       paddingLeft: 10,
       marginBottom: "5%",
@@ -168,15 +168,17 @@ const styles = StyleSheet.create({
     },
   
     loginButton: {
-      width: "45%",
-      height: "30%",
-      backgroundColor: "blue",
+      width: "55%",
+      height: "20%",
+      backgroundColor: "#F75D59",
       borderRadius: 10,
       alignItems: "center",
       justifyContent: "center",
-      borderWidth: 3,
+      borderWidth: 1,
       borderColor: "white",
       minHeight: 50,
+      marginLeft:-20,
+      marginRight:20
     },
   
     loginButtonText: {
@@ -185,20 +187,21 @@ const styles = StyleSheet.create({
     },
   
     registerButton: {
-      width: "45%",
-      height: "30%",
+      width: "55%",
+      height: "20%",
       backgroundColor: "white",
       borderRadius: 10,
       alignItems: "center",
       justifyContent: "center",
-      borderWidth: 3,
-      borderColor: "blue",
+      borderWidth: 1,
+      borderColor: "#F98B88",
       minHeight: 50,
+      marginLeft:0
     },
   
     registerButtonText: {
       fontWeight: "bold",
-      color: "blue",
+      color: "black",
     },
   
     errorContainer: {
